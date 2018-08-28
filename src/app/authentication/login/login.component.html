@@ -1,0 +1,16 @@
+<div class = "login">
+    <div class="container">
+    <h2 class = "login_title"> Login </h2>
+    <form class = "login_form" [formGroup] = "form" (ngSubmit) = "login()">
+      <mat-form-field>
+        <input  matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type= "password" class = "password">
+      </mat-form-field>
+      <br>
+      <button class = "submit" mat-raised-button color="primary" type="submit"> Sign in! </button> <!-- after pressing button the ngSubmit event will be called-->
+    </form>
+  </div>
+  </div>
