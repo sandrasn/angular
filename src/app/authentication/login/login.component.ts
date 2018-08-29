@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from "../authentication.service";
 import { UserService } from '../../shared/services/user.service';
+import { Router } from '@angular/router';
 
 
 
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
   private loginservice: AuthenticationService,
-  private userService: UserService ) { }
+  private userService: UserService,
+  private router:Router ) { }
 
   ngOnInit() {
     this.initForm();
@@ -43,7 +45,7 @@ login () {
       //alert(this.message = response.payload.message);
       this.userService.setToken(response.payload.token);
       this.userService.getUserProfile().subscribe();
-      // this.router.navigate(['feed']);
+      this.router.navigate(['feed']);
      }
   );
 }

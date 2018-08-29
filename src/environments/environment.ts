@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  getUserUrl: 'http://localhost:3000/api/v1/users/self'
+  getUserUrl: 'http://localhost:3000/api/v1/users/self',
+  getFeedUrl: 'http://localhost:3000/api/v1/media'
 };
 
 

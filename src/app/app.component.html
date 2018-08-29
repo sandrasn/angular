@@ -1,3 +1,8 @@
  <!-- <bc-registration></bc-registration>   -->
- <bc-login> </bc-login>  
+ <!-- <bc-login> </bc-login>   -->
+ <!-- pass user from app component.ts  to children compenent (appcomponent.html)  -->
+ <bc-header [user] = "user"></bc-header> 
+ <div class = "wrapper">
+     <router-outlet></router-outlet>
+ </div>
 

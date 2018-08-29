@@ -1,0 +1,8 @@
+<div class = "wrapper">
+  <div class = "user" *ngIf = "user">
+  <div class = "user_name">Welcome, {{user?.username}}</div>
+  <div class = "user_action">
+    <button mat-button color="primary" (click)="logout()" class="logOut" >Log Out</button>
+  </div>
+</div>
+</div>

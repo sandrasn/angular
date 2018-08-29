@@ -7,7 +7,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserGuard implements CanLoad {
+export class AuthGuard implements CanLoad {
   constructor(private userService: UserService,
   private router:Router){
 
@@ -19,12 +19,13 @@ export class UserGuard implements CanLoad {
       this.userService.getUserProfile().subscribe(
         (response)=>{
          // this.router.navigate(['feed']);
-         observer.next(false);
+         observer.next(true);
          observer.complete();
         return true;
         },
         (error)=>{
-          observer.next(true); // go to registration
+            this.router.navigate(['auth/login']);
+          observer.next(false); // go to login form
          observer.complete();
         });
     });

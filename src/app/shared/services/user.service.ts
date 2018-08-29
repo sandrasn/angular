@@ -17,7 +17,8 @@ export class UserService {
   private _userSource = new BehaviorSubject(null);
   public user: Observable<User>;
   constructor(private http: HttpClient,
-              private helpersService: HelpersService) {
+              private helpersService: HelpersService,
+              private router: Router) {
     this.user = this._userSource.asObservable();
   }
 
@@ -30,6 +31,15 @@ export class UserService {
         catchError(this.helpersService.handleError('getUser')),
       );
   }
+  logout():void{
+    this.removeToken();
+    this._userSource.next(null);
+    this.router.navigateByUrl('auth/login');
+  }
+  removeToken(){
+    localStorage.removeItem('token');
+    this.token=null;
+  }
   setToken(token): void {
     localStorage.setItem('token', token);
     this.token = token;
@@ -40,4 +50,5 @@ export class UserService {
     }
     return this.token;
   }
+  
 }

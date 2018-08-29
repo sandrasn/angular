@@ -5,18 +5,19 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
+import { AuthenticationRoutingModule } from './authentication-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    AuthenticationRoutingModule,
     MatButtonModule, 
     MatFormFieldModule, 
     MatInputModule,
-    BrowserAnimationsModule
+    // BrowserAnimationsModule
 
   ],
-  declarations: [RegistrationComponent, LoginComponent],
-  exports:[RegistrationComponent, LoginComponent]
+  declarations: [RegistrationComponent, LoginComponent]
 })
 export class AuthenticationModule { }
