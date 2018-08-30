@@ -18,10 +18,12 @@
       <input matInput placeholder="Confirm password" formControlName="conf_password" type = "password" >
     </mat-form-field>
     <br>
+    <!--!form.controls.conf_password.valid-->
+    <span *ngIf = "form.controls.conf_password.dirty && !form.controls.conf_password.valid">Passwords do not match!</span>
+    <br>
     <button class = "submit" mat-raised-button color="primary" type="submit"> Register me! </button> <!-- after pressing button the ngSubmit event will be called-->
     <br>
-    <button mat-raised-button color="primary" type="submit"> Sign in! </button> 
+    <button mat-button color="primary" type="submit" [routerLink]="'/auth/login'"> Sign in! </button> 
   </form>
-  <!--<div class=“authorization_success_message”>{{message}}</div>-->
 </div>
 </div>

@@ -12,7 +12,7 @@ export class UserGuard implements CanLoad {
   private router:Router){
 
   }
-  //after (): ko funkcija atgriezis, vienu no 3 iespejamajiem variantiem 
+  //after can load (): ko funkcija atgriezis, vienu no 3 iespejamajiem variantiem 
   //Observable<boolean> generic, this case boolean
   canLoad(route:Route): Observable<boolean> | Promise<boolean> | boolean {
     return Observable.create((observer: Observer<boolean>)=>{

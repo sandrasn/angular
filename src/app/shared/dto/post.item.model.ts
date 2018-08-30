@@ -1,6 +1,6 @@
 export class PostItem {
     createdAt: string;
-    media: string;
+    media:{path:string} ;
     title: string;
     updatedAt: string;
     username: string;

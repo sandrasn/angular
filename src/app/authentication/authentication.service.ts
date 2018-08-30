@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
 import { Registration} from "../shared/dto/registration.model"
-import { Response} from "../shared/dto/response.model"
+import { Response} from "../shared/DTO/response.model"
 import { HelpersService } from '../shared/services/helpers.service';
 import { catchError } from 'rxjs/operators';
 import { Logingin } from '../shared/dto/login.model';

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PostItem } from '../../shared/dto/post.item.model';
 import { FeedService } from '../../shared/services/feed.service';
 import { HelpersService } from '../../shared/services/helpers.service';
-import { Router } from '../../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
+// injected by routing
 @Component({
-  selector: 'bc-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })

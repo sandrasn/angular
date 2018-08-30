@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
-import { HelpersService } from '../services/helpers.service';
+import { HelpersService } from './helpers.service';
 import { PostItem } from '../dto/post.item.model';
-import { Response } from '../dto/response.model';
+import { Response } from '../DTO/response.model';
 import { catchError } from 'rxjs/operators';
-import { Observable } from '../../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -22,4 +22,10 @@ export class FeedService {
           catchError(this.helpersService.handleError('get feed'))
         );
     }
+    getPost(id):Observable<Response<PostItem>> {
+      return this.http.get<Response<PostItem>>( environment.getPostUrl+ id)
+        .pipe(
+          catchError(this.helpersService.handleError('get feed item'))
+        );
+      }
 }

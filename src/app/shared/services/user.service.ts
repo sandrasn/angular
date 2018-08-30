@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from '../../../../node_modules/rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HelpersService } from './helpers.service';
 import { Router } from '@angular/router';
-import { User } from "./../dto/user.model";
+import { User } from "../dto/user.model";
 import { environment } from '../../../environments/environment';
 import { Response } from '../DTO/response.model';
 import { tap } from 'rxjs/internal/operators';

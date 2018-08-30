@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from "../authentication.service";
+import { PasswordValidation } from '../../shared/validators/password.validator';
 
 @Component({
   selector: 'bc-registration',
@@ -23,21 +24,24 @@ private initForm(){
     {
       username: new FormControl('',[
         Validators.required,
-        //Validators.pattern(/^(?=^.{8,}$)[a-zA-Z][a-zA-Z0-9]/) // must be 8 character long
+        Validators.pattern(/^(?=^.{8,}$)[a-zA-Z][a-zA-Z0-9]/) // must be 8 character long
       ]),
       email: new FormControl('',[ 
         Validators.required,
-       // Validators.pattern(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)
+       Validators.pattern(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)
        ]),
       password:new FormControl('',[
         Validators.required,
-        //Validators.pattern(/[a-zA-Z0-9]{8,}/) //must be 8 chars
+        Validators.pattern(/[a-zA-Z0-9]{8,}/) //must be 8 chars
       ]),
       conf_password:new FormControl('',[
         Validators.required,
-       // Validators.pattern(/[a-zA-Z0-9]{8,}/)
+       Validators.pattern(/[a-zA-Z0-9]{8,}/)
       ])
-    })
+    },
+    {
+    validator: PasswordValidation.MatchPassword
+    });
 }
 register () {
   if (this.form.invalid) {
@@ -46,7 +50,6 @@ register () {
   this.authenticationService.register(this.form.value).subscribe(
     (response) => { 
       alert(this.message = response.payload.message);
-
     }
   );
 }

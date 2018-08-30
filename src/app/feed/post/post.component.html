@@ -1,0 +1,15 @@
+<div class="container">
+      <div class="post">
+        <div class="box">
+          <div class="img">
+            <img class="img" src="http://localhost:3000{{data?.media?.path}}">
+          </div>
+            <p class = "post_title">{{data?.title}}</p>
+            <div>
+              <p class = "author"> Author: {{data?.username}}</p>
+              </div>
+            <div>{{data?.createdAt |date}}</div>
+            <div class="border"></div>
+        </div>
+      </div>
+  </div>

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   getUserUrl: 'http://localhost:3000/api/v1/users/self',
-  getFeedUrl: 'http://localhost:3000/api/v1/media'
+  getFeedUrl: 'http://localhost:3000/api/v1/media',
+  getPostUrl: 'http://localhost:3000/api/v1/media/'
 };
 
 
@@ -16,3 +17,5 @@ export const environment = {
  * because it will have a performance impact when errors are thrown
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+  
