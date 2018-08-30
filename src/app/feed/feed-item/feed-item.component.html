@@ -1,0 +1,14 @@
+<div class="post">
+  <div class="box">
+    <div class="img">
+      <img class="img" [src]="'http://localhost:3000' + item.media.path">
+    </div>
+      <p class = "post_title">{{item?.title}}</p>
+      <div>
+        <p class = "author"> Author: {{item?.username}}</p>
+        </div>
+      <div class="link">{{item?.createdAt |date}}</div>
+      <a [routerLink] = "item._id">Go to post!</a>
+      <div class="border"></div>
+  </div>
+</div>

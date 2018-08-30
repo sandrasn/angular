@@ -1,0 +1,35 @@
+.title{
+    padding-top: 40px;
+    margin-left:40px;
+}
+.post_title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-top:10px;
+}
+.post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+}
+.img{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 400px;
+    height:300px;
+}
+.box{
+    margin-top: 50px;
+    width: 400px;
+    height: 340px;
+}
+.border{
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #1A0A6E;
+    margin-top:20px;
+    margin-bottom: 30px;
+}
